@@ -2039,7 +2039,7 @@ print('NOTE:  Remove the sys.exit call here to run the test cases.')
 sys.exit(-1)
 
 if False:
-    ex1_change_bios_setting(host, 'AdminName', 'Mr. Rest', iLO_loginname, iLO_password, bios_password)
+    ex1_change_bios_setting(host, ['AdminName'], ['Mr. Rest'], iLO_loginname, iLO_password, bios_password)
     ex2_reset_server(host, iLO_loginname, iLO_password)
     ex3_enable_secure_boot(host, False, iLO_loginname, iLO_password)
     ex4_bios_revert_default(host, iLO_loginname, iLO_password)
@@ -2184,4 +2184,4 @@ if False:
     instance = ex35_set_bios_iscsi(host, iLO_loginname, iLO_password, desired_iscsi_settings)
     if instance != -1:
         print("Created new iSCSI attempt (instance {})".format(instance))
-    
+   

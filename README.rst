@@ -30,7 +30,7 @@ Requirements
 Remote communication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
- No special requeriments.
+ No special requirements.
  
 Inband communication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +57,7 @@ Create a Rest Object
 
 Create a Redfish Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~
- Just like Rest object, a Redfisht object instance in RedfishAPiExamples.py is created by calling the **create_object** method with four parameters: ip address, iLO user name, iLO password and the default prefix.
+ Just like Rest object, a Redfish object instance in RedfishAPiExamples.py is created by calling the **create_object** method with four parameters: ip address, iLO user name, iLO password and the default prefix.
 
 .. code-block:: python
 

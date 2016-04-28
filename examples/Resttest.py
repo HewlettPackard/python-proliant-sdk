@@ -1,4 +1,4 @@
- # Copyright 2016 Hewlett Packard Enterprise Development, LP.
+# Copyright 2016 Hewlett Packard Enterprise Development, LP.
  #
  # Licensed under the Apache License, Version 2.0 (the "License"); you may
  # not use this file except in compliance with the License. You may obtain
@@ -815,38 +815,38 @@ if __name__ == "__main__":
     #login_account = "admin"
     #login_password = "password"
 
-    try:
-        with open("credentials.txt", "r") as f:
-            credentialslist = f.read()
-            credentialslist = credentialslist.split("\n")
-            credentialslist = filter(None, credentialslist)
-    except Exception:
-        sys.stderr.write("error opening credentials")
+    #try:
+    #    with open("/etc/puppetlabs/code/environments/production/modules/pythonilorestlibrary/files/credentials.txt", "r") as f:
+    #        credentialslist = f.read()
+    #        credentialslist = credentialslist.split("\n")
+    #        credentialslist = filter(None, credentialslist)
+    #except Exception:
+    #    sys.stderr.write("error opening credentials \n")
 
     #accepts arguments when run,
     #RestfulApiExamples.py https://xx.xx.xx.xx username password
-    #try:
-    #    iLO_host = "https://"+str(sys.argv[1])
-    #except Exception:
-    #    sys.stderr.write("iLO address error \n")
-    #try:
-    #    login_account = str(sys.argv[2])
-    #    login_password = str(sys.argv[3])
-    #except IndexError:
-    #    sys.stderr.write("Missing parameters \n")
-    #except Exception:
-    #    sys.stderr.write("Credentials Error \n")
     try:
-        iLO_host = "https://"+str(credentialslist[0])
+        iLO_host = "https://" + str(sys.argv[1])
     except Exception:
         sys.stderr.write("iLO address error \n")
     try:
-        login_account = str(credentialslist[1])
-        login_password = str(credentialslist[2])
+        login_account = str(sys.argv[2])
+        login_password = str(sys.argv[3])
     except IndexError:
         sys.stderr.write("Missing parameters \n")
     except Exception:
         sys.stderr.write("Credentials Error \n")
+    #try:
+    #    iLO_host = "https://"+str(credentialslist[0])
+    #except Exception:
+    #    sys.stderr.write("iLO address error \n")
+    #try:
+    #    login_account = str(credentialslist[1])
+    #    login_password = str(credentialslist[2])
+    #except IndexError:
+    #    sys.stderr.write("Missing parameters \n")
+    #except Exception:
+    #    sys.stderr.write("Credentials Error \n")
 
     # Create a REST object
     try:
